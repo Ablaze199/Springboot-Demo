@@ -11,10 +11,18 @@
         <thead>
         <tr>
             <th>Employee first Name</th>
+            <th>Employee Last Name</th>
+            <th>Employee Email</th>
         </tr>
         </thead>
         <tbody>
+            <tr th :each="employee : ${ListEmployees}">
+                <td th :text="${employee.firstName}"></td>
+                <td th :text="${employee.firstName}"></td>
+                <td th :text="${employee.email}"></td>
 
+
+            </tr>
         </tbody>
     </table>
 
