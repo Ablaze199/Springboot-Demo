@@ -1,5 +1,6 @@
 package com.spring.demo.springcontroler;
 
+import com.spring.demo.model.Employee;
 import com.spring.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,5 +17,13 @@ public class EmployeeController {
     public String viewHomePage(Model model) {
         model.addAttribute("listEmployees", employeeService.getAllEmployees());
         return "index";
+    }
+    @GetMapping("/showNewEmployeeform")
+    public String showNewEmployeeform( Model model){
+        //create model attribute to bind data
+        Employee employee = new Employee();
+        model.addAttribute("employee", employee);
+        return "new_employee";
+
     }
 }
